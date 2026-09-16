@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Academia C.O.D.E. — Terminal de Acceso</title>
+<meta name="description" content="Portal de acceso para estudiantes Hacker de la Academia C.O.D.E.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/hacker.css">
+</head>
+<body>
+<canvas id="matrix-canvas"></canvas>
+<div class="scan-sweep"></div>
+<div class="scanlines"></div>
+<div class="crt-overlay"></div>
+
+<div id="app-root">
+
+  <!-- ============ BOOT SCREEN ============ -->
+  <section id="screen-boot" class="screen active">
+    <div class="terminal-box">
+      <div id="boot-log" class="boot-log"></div>
+    </div>
+  </section>
+
+  <!-- ============ LOGIN SCREEN ============ -->
+  <section id="screen-login" class="screen">
+    <div class="terminal-box login-box">
+      <div class="ascii-divider">═══════════════════════════════════</div>
+      <h1 id="brand-title" class="brand-title glitch" data-text="ACADEMIA C.O.D.E.">ACADEMIA C.O.D.E.</h1>
+      <div class="lema" id="inst-lema">OPERACIÓN: LIBERACIÓN MENTAL</div>
+      <div class="ascii-divider">═══════════════════════════════════</div>
+
+      <p class="prompt-label">&gt; INGRESA TU CÓDIGO DE ACCESO HACKER PARA CONECTARTE A LA RED</p>
+      <div class="code-input-row">
+        <span class="prompt-caret">$</span>
+        <input id="code-input" type="text" autocomplete="off" spellcheck="false" maxlength="14" placeholder="EST-XXXX">
+      </div>
+      <button id="btn-login" class="btn-hacker">&gt; Conectar a la Resistencia</button>
+
+      <div id="login-error" class="login-error" hidden>
+        ACCESO DENEGADO — CÓDIGO NO RECONOCIDO POR LA RED. VERIFICA TU CARNET HACKER.
+      </div>
+      <div id="no-data-note" class="login-error" hidden>
+        EL PORTAL AÚN NO HA SIDO PUBLICADO CON DATOS DE ESTUDIANTES. CONSULTA A TU DOCENTE.
+      </div>
+
+      <div class="hint-text">TRANSMISIÓN CIFRADA · ACADEMIA C.O.D.E. · SOLO PERSONAL AUTORIZADO</div>
+    </div>
+  </section>
+
+  <!-- ============ DASHBOARD SCREEN ============ -->
+  <section id="screen-dashboard" class="screen">
+    <div class="dash-wrap">
+      <div class="dash-header">
+        <div id="dash-avatar-wrap" class="avatar-frame"></div>
+        <div class="dash-id">
+          <div class="codename" id="dash-name">—</div>
+          <div class="meta-line" id="dash-meta">—</div>
+          <div class="rango-line" id="dash-rango">—</div>
+          <div class="power-bar-wrap">
+            <div class="power-bar-track"><div id="power-bar-fill" class="power-bar-fill" style="width:0%"></div></div>
+            <div class="power-bar-label" id="power-bar-label">—</div>
+          </div>
+        </div>
+        <div class="dash-rb">
+          <div class="rb-value"><span id="dash-rb-value">0</span></div>
+          <div class="rb-label">RitaBits</div>
+          <button id="btn-logout" class="btn-logout" style="margin-top:10px">Desconectar</button>
+        </div>
+      </div>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="perfil">Perfil</button>
+        <button class="tab-btn" data-tab="avatares">Avatares</button>
+        <button class="tab-btn" data-tab="album">Álbum</button>
+        <button class="tab-btn" data-tab="estadisticas">Estadísticas</button>
+        <button class="tab-btn" data-tab="ranking">Ranking</button>
+        <button class="tab-btn" data-tab="ficha">Ficha Individual</button>
+        <button class="tab-btn" data-tab="carnet">Carnet</button>
+      </div>
+
+      <div id="tab-perfil" class="tab-panel active">
+        <div class="panel-box" id="panel-perfil"></div>
+      </div>
+      <div id="tab-avatares" class="tab-panel">
+        <div class="panel-box" id="panel-avatares"></div>
+      </div>
+      <div id="tab-album" class="tab-panel">
+        <div class="panel-box" id="panel-album"></div>
+      </div>
+      <div id="tab-estadisticas" class="tab-panel">
+        <div class="panel-box" id="panel-estadisticas"></div>
+      </div>
+      <div id="tab-ranking" class="tab-panel">
+        <div class="panel-box" id="panel-ranking"></div>
+      </div>
+      <div id="tab-ficha" class="tab-panel">
+        <div class="panel-box" id="panel-ficha"></div>
+      </div>
+      <div id="tab-carnet" class="tab-panel">
+        <div class="panel-box" id="panel-carnet"></div>
+      </div>
+
+      <footer class="foot-note">ACADEMIA C.O.D.E. · OPERACIÓN: LIBERACIÓN MENTAL · TERMINAL SEGURA<br>Diseñado por el Mgtr. Jesús Álvarez Sáez</footer>
+    </div>
+  </section>
+
+</div>
+
+<script src="assets/js/matrix.js"></script>
+<script src="assets/js/carnet-image.js"></script>
+<script src="data/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
